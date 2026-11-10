@@ -1,5 +1,84 @@
+
+# ==============================
+# Environment variables & secrets
+# ==============================
 .env
-venv/
+.env.*
+!.env.example
+
+# ==============================
+# Python backend
+# ==============================
 __pycache__/
-*.pyc
-data/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+ENV/
+env/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ==============================
+# Node.js / React / Vite frontend
+# ==============================
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+
+# ==============================
+# Build and cache files
+# ==============================
+.cache/
+.parcel-cache/
+.next/
+out/
+build/
+
+# ==============================
+# IDE and editor files
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Logs
+# ==============================
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ==============================
+# Local databases and vector storage
+# ==============================
+*.db
+*.sqlite
+*.sqlite3
+qdrant_storage/
+storage/
+
+# ==============================
+# Testing
+# ==============================
+coverage/
+.nyc_output/
+
+# ==============================
+# Temporary files
+# ==============================
+*.tmp
+*.bak
+*.temp

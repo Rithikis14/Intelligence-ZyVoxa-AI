@@ -14,7 +14,7 @@ COLLECTION_NAME = "zyvoxa_knowledge_base"
 TOP_K = 5
 
 MIN_RELEVANCE_SCORE = float(
-    os.getenv("MIN_RELEVANCE_SCORE", "0.0")
+    os.getenv("MIN_RELEVANCE_SCORE", "0.60")
 )
 
 def get_embedding_model():
@@ -39,10 +39,9 @@ def retrieve_documents(
     client,
     top_k=TOP_K
 ):
-
     query_vector = embeddings.embed_query(question)
 
-    results = client.query_points(
+    response = client.query_points(
         collection_name=COLLECTION_NAME,
         query=query_vector,
         limit=top_k,
@@ -51,7 +50,7 @@ def retrieve_documents(
 
     relevant_results = [
         point
-        for point in results.points
+        for point in response.points
         if point.score >= MIN_RELEVANCE_SCORE
     ]
 
